@@ -1,0 +1,62 @@
+{
+  "auto": [
+    {
+      "Year": "1995",
+      "Model": "Nissan",
+      "Style": "KingCab",
+      "VIN": "",
+      "Mileage": "",
+      "uid":"",
+      "oil": [
+        {
+          "dateOil": "",
+          "mileageOil":"",
+          "fiterType": "",
+          "qnty":"",
+          "addQnty":""
+        }
+      ],
+      "tires":[
+        {
+          "dateTires":"",
+          "rotateFreq":"",
+          "offsetFlag":"",
+          "frontSize":"",
+          "rearSize":"",
+          "mileageTire":""
+        }
+      ],
+      "fuel":[
+        {
+          "dateFuel":"",
+          "price":"",
+          "mileageFuel":"",
+          "gallons":""
+        }
+      ],
+      "service":[
+        {
+          "dateService":"",
+           "ServiceType":"",
+           "cost":"",
+           "notes":""
+        }
+
+      ],
+      "recalls":[
+        {
+          "component":"",
+          "summary":"",
+          "consequence":"",
+          "remedy":"",
+          "corrected":""
+        }
+
+      ]
+
+    }
+  ]
+}
+
+
+
