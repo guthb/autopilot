@@ -47,17 +47,17 @@ This will show at in your browser of choice:
 ### Screenshots
 
 
-## Screenshot of Login ![Screenshot](/img/login.png)
+## Login ![Screenshot](/img/login.png)
 
-## Screenshot of vehicle Build ![Screenshot](/img/auto.png)
+## Vehicle Build ![Screenshot](/img/auto.png)
 
-## Screenshot of vehicle in Garage ![Screenshot](/img/garage.png)
+## Vehicle in Garage ![Screenshot](/img/garage.png)
 
-## Screenshot of Maintenace Items ![Screenshot](/img/oilfueltires.png)
+## Maintenace Items ![Screenshot](/img/oilfueltires.png)
 
-## Screenshot of vehicle service ![Screenshot](/img/service.png)
+## Vehicle service ![Screenshot](/img/service.png)
 
-## Screenshot of logout ![Screenshot](/img/logout.png)
+## Logout ![Screenshot](/img/logout.png)
 
 ### Contributors:
 -[Bradley Guthrie](https://github.com/guthb)
