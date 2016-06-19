@@ -1,0 +1,19 @@
+<div class="container">
+  <section class="login">
+    <h2 class="center-align">Login or Register to AutoPilot</h2>
+    <div class="row">
+      <div class="input-field col m10 offset-m1">
+        <label>Email:</label> <input type="email" autofocus="true" ng-model="account.email" class="emailEntry">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col m10 offset-m1">
+        <label>Password:</label> <input type="password" ng-model="account.password" class="passwordEntry">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m2 offset-m4"><button class="btnLogin btn btn-info" ng-click="login()">LOGIN</button></div>
+      <div class="col m2"><button class="btnReg btn btn-default" ng-click="register()">REGISTER</button></div>
+    </div>
+  </section>
+</div>

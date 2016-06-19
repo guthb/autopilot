@@ -3,28 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <link rel="stylesheet" href="lib/bower_components/Materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
   <title>Front End Capstone Autopilot NG application</title>
 </head>
   <body ng-app="AutoPilot">
 
-  <div>
-    <h1>  Autopilot start</h1>
-  </div>
+
+
+
+
+    <div class="container" ng-view></div>
+
+
+
+  <!-- LOADING SPINNER -->
+    <div id="loaderContainer" class="preloader-wrapper big active" loader>
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./lib/bower_components/materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="./lib/bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="./lib/bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="./lib/bower_components/firebase/firebase.js"></script>
     <script type="text/javascript" src="./lib/bower_components/angularfire/dist/angularfire.js"></script>
     <script type="text/javascript" src="./app/app.js"></script>
-    <script type="text/javascript" src="./app/factories/AuthFactory.js"></script>
-    <script type="text/javascript" src="./app/factories/NhtsaFactory.js"></script>
-    <script type="text/javascript" src="./app/factories/FirebaseFactory.js"></script>
-    <script type="text/javascript" src="./app/controllers/LoginCtrl.js"></script>
-    <script type="text/javascript" src="./app/controllers/NhtsaearchCtrl.js"></script>
-    <script type="text/javascript" src="./app/controllers/ServicesaearchCtrl.js"></script>
+    <script type="text/javascript" src="./app/factories/httpInterceptor.factory.js"></script>
+    <script type="text/javascript" src="./app/factories/Firebase.factory.js"></script>
+    <!-- <script type="text/javascript" src="./app/factories/AuthFactory.js"></script> -->
+    <!-- <script type="text/javascript" src="./app/controllers/LoginCtrl.js"></script> -->
+    <script type="text/javascript" src="./app/controllers/CarbuildCtrl.js"></script>
+    <script type="text/javascript" src="./app/controllers/GarageCtrl.js"></script>
+    <!-- <script type="text/javascript" src="./app/controllers/NhtsaearchCtrl.js"></script>
+    <script type="text/javascript" src="./app/controllers/ServiceCtrl.js"></script> -->
   </body>
 </html>

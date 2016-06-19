@@ -1,0 +1,21 @@
+<H2>TEST</H2>
+<h1>{{title}}</h1>
+<div class="scroll">
+  <div class="row">
+    <div class="container">
+    <div class="col m3 autoCard" ng-repeat="auto in autos">
+
+    <p class="auto">{{auto.year}}</p>
+    <p class="auto">{{auto.make}}</p>
+    <p class="auto">{{auto.model}}</p>
+    <p class="auto">{{auto.vin}}</p>
+    <p class="auto">{{auto.color}}</p>
+
+  <!-- <img class="activator" ng-src={{auto.img}} err-src="img/noImage.png"> -->
+     <button class="buttonSpacing col m12 btn" ng-click="deleteAutoArrayItem(auto)">Delete</button>
+     <button class="buttonSpacing col m12 btn" ng-click="editAutoArrayItem(auto.vin)">Edit</button>
+     <button class="buttonSpacing col m12 btn"  ng-click="serviceAutoArrayItem(auto.vin)">Service</button>
+     </div>
+    </div>
+  </div>
+</div>
