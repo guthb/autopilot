@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<form>
+  <p>Year</p>
+  <input ng-required="true" required class="validate" type="text" placeholder="Year of auto" ng-model="newAuto.Year">
+
+  <p>Make</p>
+  <input ng-required="required" required class="validate" type="text" placeholder="Maker of auto" ng-model="newAuto.make">
+
+  <p>Model</p>
+  <input ng-required="required" required class="validate" type="text" placeholder="Model of auto" ng-model="newAuto.model">
+
+  <p>VIN</p>
+  <input ng-required="required" required class="validate" type="text" placeholder="VIN of auto" ng-model="newAuto.vin">
+
+  <p>Color</p>
+  <input type="text" placeholder="Color of auto" ng-model="newAuto.color">
+
+  <div class="row">
+    <div class="col m3 offset-m2"><a class="btn-large" ng-click="addNewAuto()">{{submitButtonText}}</a></div>
+    <div class="col m3 offset-m2"><a class="btn-large" ng-click="addAnotherAuto()">{{clearButtonText}}</a></div>
+  </div>
+
+</form>
