@@ -30,17 +30,17 @@ app.config(function($routeProvider) {
       controller: "AutoEditCtrl",
       // resolve: {isAuth}
     }).
-    when("/service", {
+    when("/service/:autoVin", {
       templateUrl: "partials/service.html",
       controller: "ServiceCtrl",
       // resolve: {isAuth}
     }).
-    when("/log", {
+    when("/log/:autoVin", {
       templateUrl: "partials/servicelog.html",
       controller: "",
       // resolve: {isAuth}
     }).
-    when("/recall", {
+    when("/recall/:autoVin", {
       templateUrl: "partials/servicerecall.html",
       controller: "",
       // resolve: {isAuth}

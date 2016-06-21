@@ -30,9 +30,10 @@ $rootScope.editMode = false;
         $location.url(`/edit/${auto.vin}`);
   }
 
-  $scope.gotToService = function (auto) {
+  $scope.goToService = function (auto) {
+    console.log("auto in service call", auto.vin);
     $rootScope.selectedAuto = auto;
-      $location.url("/serivce");
+      $location.path(`/service/${auto.vin}`);
   }
 
 
