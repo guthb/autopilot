@@ -25,14 +25,14 @@ app.config(function($routeProvider) {
       controller: "GarageCtrl",
       // resolve: {isAuth}
     }).
-    when("/edit", {
+    when("/edit/:autoVin", {
       templateUrl: "partials/autocard.html",
-      controller: "",
+      controller: "AutoEditCtrl",
       // resolve: {isAuth}
     }).
     when("/service", {
       templateUrl: "partials/service.html",
-      controller: "",
+      controller: "ServiceCtrl",
       // resolve: {isAuth}
     }).
     when("/log", {

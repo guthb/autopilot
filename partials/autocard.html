@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 <form>
   <p>Year</p>
-  <input ng-required="true" required class="validate" type="text" placeholder="Year of auto" ng-model="newAuto.Year">
+  <input ng-required="true" required class="validate" type="text" placeholder="Year of auto" ng-model="newAuto.year">
 
   <p>Make</p>
   <input ng-required="required" required class="validate" type="text" placeholder="Maker of auto" ng-model="newAuto.make">
@@ -16,8 +16,9 @@
   <input type="text" placeholder="Color of auto" ng-model="newAuto.color">
 
   <div class="row">
-    <div class="col m3 offset-m2"><a class="btn-large" ng-click="addNewAuto()">{{submitButtonText}}</a></div>
-    <div class="col m3 offset-m2"><a class="btn-large" ng-click="addAnotherAuto()">{{clearButtonText}}</a></div>
+    <div class="col m3 offset-m1"><a class="btn-large" ng-click="addNewAuto()">{{submitButtonText}}</a></div>
+    <div class="col m3 offset-m1"><a class="btn-large" ng-click="clearAutoData()" ng-hide="editMode">{{clearButtonText}}</a></div>
+    <div class="col m3 offset-m1"><a class="btn-large" ng-click="goToGarage()" ng-hide="editMode">{{garageButtonText}}</a></div>
   </div>
 
 </form>
