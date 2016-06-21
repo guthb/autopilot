@@ -1,4 +1,35 @@
+<h1>{{title}}</h1>
+<div class="container">
 
-<div>
-  <h1>Service</h1>
+  <form>
+   <p> auto details</p>
+
+    <p class="auto">{{auto.year}}</p>
+    <p class="auto">{{auto.make}}</p>
+    <p class="auto">{{auto.model}}</p>
+    <p class="auto">{{auto.vin}}</p>
+    <p class="auto">{{auto.color}}</p>
+  </form>
+
+  <form>
+   <fieldset>
+    <legend> Service Items</legend>
+    <p>
+    <label>Select Service</label>
+      <select id="services" >
+        <option value="1" >fuel</option>
+        <option value="2" >oil</option>
+        <option value="3" >maint</option>
+        <option value="4" >tires</option>
+      </select>
+   </fieldset>
+  </form>
+
+  <input type="date" class="datepicker">
+
+  <input type="text" placeholder="enter milage" ng-model="newService.milage"">
+  <input type="text" placeholder="enter cost" ng-model="newService.cost"">
+
+  <p>Auto Service Notes</p>
+  <input type="text" placeholder="">
 </div>

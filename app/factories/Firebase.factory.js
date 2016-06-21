@@ -50,11 +50,9 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
     },
 
 
-
-
     putAutoIntoFirebase : function (autoId, newAuto) {
       //let user = AuthFactory.getUser();
-      return $q(function(resolve,reject){
+      return $q((resolve,reject) => {
 
           $http.put(
             firebaseURL + `auto/${auto.id}.json`,
@@ -65,7 +63,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
                 vin: auto.vin,
                 color: auto.color,
                 img: auto.img,
-                uid: user.uid
+                // uid: user.uid,
+                uid:"1"
             })
           )
           .success(function(response){
@@ -76,7 +75,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
 
     postServiceIntoFirebase : function (newService, selectedAutoVin) {
       //let user = AuthFactory.getUser();
-      return $q(function(resolve,reject){
+      return $q((resolve,reject) => {
 
           $http.post(
             firebaseURL + `service.json`,
@@ -96,7 +95,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
 
     postAutoIntoFirebase : function (newAuto) {
       //let user = AuthFactory.getUser();
-      return $q(function(resolve,reject){
+      console.log("newAuto for Post", newAuto );
+      return $q((resolve,reject) => {
           $http.post(
             firebaseURL + `auto.json`,
             JSON.stringify({
@@ -105,7 +105,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
                   model:newAuto.model,
                   vin:newAuto.vin,
                   color: newAuto.color,
-                  img: newAuto.img,
+                  img: "",
                   // uid:  user.uid,
                   uid:"1"
               }))
@@ -123,9 +123,45 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
           .success((response) => {
             resolve(response);
           });
+        }); //-->end of return
+    },
+
+    getSingleAutofromFireBase : function(sentID){
+        console.log("sentID for Edit", sentID);
+        return $q((resolve, reject) => {
+          $http.get(firebaseURL + `auto/${sentID}.json`)  //firebaase
+          .success(function(response){
+          resolve(response);
+        })
+        .error(function(error){
+           reject(error);
         });
-    }
-  }; // end of return for functions
+      }); //--end of return
+    },
+
+    putSingleAuto : function(sentID, newAuto){
+      // let user = AuthFactory.getUser();
+      return $q((resolve, reject) => {
+          $http.put(
+              firebaseURL + `auto/${sentID}.json`,
+              JSON.stringify({
+                  year: newAuto.year,
+                  make: newAuto.make,
+                  model: newAuto.model,
+                  vin: newAuto.vin,
+                  color: newAuto.color,
+                  img: newAuto.img,
+                  // uid: user.uid,
+                  uid:"1"
+              }))
+            .success((objectFromFirebase) => {
+              resolve(objectFromFirebase); //promise word
+            });
+        }); //-->end of return
+    } //---> end of putSingle
+
+  } // end of return for all functions
+
 }); //end of factory
 
 

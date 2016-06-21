@@ -4,6 +4,7 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
 
   $scope.welcome = "hello";
   $scope.$watch( $rootScope.landing);
+  $rootScope.editMode =  false;
 
   $rootScope.landing = false;
   console.log("rootscope", $rootScope.landing);
@@ -11,6 +12,7 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
   $scope.title ="New Auto";
   $scope.submitButtonText = "Build Auto";
   $scope.clearButtonText = "Clear";
+  $scope.garageButtonText = "Garage";
 
   $scope.newAuto = {
     year: "",
@@ -28,12 +30,21 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
     FirebaseFactory.postAutoIntoFirebase(newAuto)
         .then(function successCallback(response) {
           console.log(response)
-          $location.url("/garage/1");
+          // $location.url("/garage/1");
         });
+        //resets the values for next entry
+      $scope.newAuto = {
+        year: "",
+        make: "",
+        model: "",
+        vin: "",
+        color:"",
+        uid:""
+      };
   };
 
-  // resets values for entry of another automobile
-  $scope.addAnotherAuto = function () {
+  // clears values if mistake noticed
+  $scope.clearAutoData = function () {
     $scope.newAuto = {
       year: "",
       make: "",
@@ -44,5 +55,10 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
     };
   };
 
-}); //--->end of controller
 
+  // Takes you to garage
+  $scope.goToGarage = function (){
+    $location.url("/garage/1");
+  };
+
+}); //--->end of controller
