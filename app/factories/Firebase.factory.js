@@ -28,25 +28,24 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
 
     getServiceFromSelectedAutoFromFirebase : function() {
       let services = [];
-      let auto=$rootScope.selectedAuto
+      let auto=$rootScope.selectedAuto;
       // let user = AuthFactory.getUser();
 
       return $q( (resolve, reject) => {
         $http.get(`${firebaseURL}service.json?orderBy="vin"&equalTo="${auto.vin}"`)
           .success( (returnObject) => {
+            console.log("returnOject for service",returnObject );
             var serviceCollection = returnObject;
-
-            });
           Object.keys(serviceCollection).forEach( (key) => {
-
             serviceCollection[key].id = key;
             services.push(serviceCollection[key]);
           });
-          resolve(autos);
+          resolve(services);
         })
         .error(function(error){
           reject(error);
         });
+      })
     },
 
 

@@ -37,7 +37,7 @@ app.config(function($routeProvider) {
     }).
     when("/log/:autoVin", {
       templateUrl: "partials/servicelog.html",
-      controller: "",
+      controller: "ServiceLogCtrl",
       // resolve: {isAuth}
     }).
     when("/recall/:autoVin", {
