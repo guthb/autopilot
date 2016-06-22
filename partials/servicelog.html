@@ -1,3 +1,20 @@
+<h1>{{title}}</h1>
+
 <div>
-  <h1>Servicelog</h1>
+  <p> auto details</p>
+  <p class="auto">{{serviceAuto.year}}</p>
+  <p class="auto">{{serviceAuto.make}}</p>
+  <p class="auto">{{serviceAuto.model}}</p>
+  <p class="auto">{{serviceAuto.vin}}</p>
+  <p class="auto">{{serviceAuto.color}}</p>
+</div>
+
+<div>
+  <div class="serviceCard" ng-repeat="service in serviceLog">
+    <p> <label>Service Type</label> {{service.type}} </p>
+    <p> <label>Service Date</label> {{service.date}} </p>
+    <p> <label>Service Mileage</label> {{service.mileage}} </p>
+    <p> <label>Service Cost</label> {{service.cost}} </p>
+    <p> <label>Service Notes</label> {{service.note}} </p>
+  </div>
 </div>

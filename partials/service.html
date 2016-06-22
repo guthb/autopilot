@@ -1,35 +1,59 @@
 <h1>{{title}}</h1>
-<div class="container">
+<!-- <div class="container"> -->
+<div>
+  <p> auto details</p>
+  <p class="auto">{{serviceAuto.year}}</p>
+  <p class="auto">{{serviceAuto.make}}</p>
+  <p class="auto">{{serviceAuto.model}}</p>
+  <p class="auto">{{serviceAuto.vin}}</p>
+  <p class="auto">{{serviceAuto.color}}</p>
 
-  <form>
-   <p> auto details</p>
+</div>
 
-    <p class="auto">{{auto.year}}</p>
-    <p class="auto">{{auto.make}}</p>
-    <p class="auto">{{auto.model}}</p>
-    <p class="auto">{{auto.vin}}</p>
-    <p class="auto">{{auto.color}}</p>
-  </form>
+  <!-- <legend> Service Items</legend> -->
+  <label>Select Service</label>
+    <p><select>
+      <option value="1" >fuel</option>
+      <option value="2" >oil</option>
+      <!-- <option value="3" >maintenance</option>
+      <option value="4" >tires</option> -->
+    </select></p>
 
-  <form>
-   <fieldset>
-    <legend> Service Items</legend>
-    <p>
-    <label>Select Service</label>
-      <select id="services" >
-        <option value="1" >fuel</option>
-        <option value="2" >oil</option>
-        <option value="3" >maint</option>
-        <option value="4" >tires</option>
-      </select>
-   </fieldset>
-  </form>
 
-  <input type="date" class="datepicker">
+  <label for="inputCreated">Input date</label>
+    <input input-date
+      type="text"
+      name="created"
+      id="inputCreated"
+      ng-model="serviceLog.date"
+      container="body"
+      format="dd/mm/yyyy"
+      months-full="{{ month }}"
+      months-short="{{ monthShort }}"
+      weekdays-full="{{ weekdaysFull }}"
+      weekdays-short="{{ weekdaysShort }}"
+      weekdays-letter="{{ weekdaysLetter }}"
+      disable="disable"
+      min="{{ minDate }}"
+      max="{{ maxDate }}"
+      today="today"
+      clear="clear"
+      close="close"
+      select-years="15"
+      on-start="onStart()"
+      on-render="onRender()"
+      on-open="onOpen()"
+      on-close="onClose()"
+      on-set="onSet()"
+      on-stop="onStop()"  />
 
-  <input type="text" placeholder="enter milage" ng-model="newService.milage"">
-  <input type="text" placeholder="enter cost" ng-model="newService.cost"">
+
+  <input type="text" placeholder="enter mileage" ng-model="serviceLog.mileage"">
+  <input type="text" placeholder="enter cost" ng-model="serviceLog.cost">
+  <button class="buttonSpacing col m12 offset-m1 btn" ng-click="saveServiceLog(serviceAuto)">Save</button>
+  <button class="buttonSpacing col m12 offset-m1 btn" ng-click="viewAutoServiceLogs(serviceAuto)">Logs</button>
+  <button class="buttonSpacing col m12 btn" ng-click="viewAutRecalls(serviceAuto)">Recalls</button>
 
   <p>Auto Service Notes</p>
-  <input type="text" placeholder="">
-</div>
+  <input type="text" placeholder="" ng-model="serviceLog.note">
+<!-- </div> -->
