@@ -32,7 +32,7 @@
       <li><a href="javascript:void(0);">Tires</a></li>
   </ul>
  -->
- <div class="input-field col s12">
+ <!-- <div class="input-field col s12">
     <select multiple>
       <option value="" disabled selected>Choose your Service</option>
       <option value="1">Fuel</option>
@@ -41,14 +41,15 @@
       <option value="4">Tires</option>
     </select>
   </div>
-
-
-
-
-
-
-
-
+ -->
+  <div class="row" >
+    <div input-field class="col m4 offset-m1">
+      <select ng-model="serviceLog.type" material-select >
+        <option value="" selected>Services</option>
+        <option ng-repeat="value in type.choices">{{value}}</option>
+      </select>
+    </div>
+  </div>
 
   <label for="inputCreated"></label>
     <input input-date
