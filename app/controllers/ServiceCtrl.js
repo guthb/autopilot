@@ -10,6 +10,13 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
   $scope.serviceAuto = {};
 
 
+  $scope.type = {
+            value: "",
+            choices: ["fuel", "oil", "maintenace", "tires"]
+        };
+
+
+
   var currentTime = new Date();
     $scope.currentTime = currentTime;
     $scope.month = ['Januar', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -24,22 +31,22 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
     $scope.minDate = (new Date($scope.currentTime.getTime() - ( 1000 * 60 * 60 *24 * days ))).toISOString();
     $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
     $scope.onStart = function () {
-        console.log('onStart');
+        // console.log('onStart');
     };
     $scope.onRender = function () {
-        console.log('onRender');
+        // console.log('onRender');
     };
     $scope.onOpen = function () {
-        console.log('onOpen');
+        // console.log('onOpen');
     };
     $scope.onClose = function () {
-        console.log('onClose');
+        // console.log('onClose');
     };
     $scope.onSet = function () {
-        console.log('onSet');
+        // console.log('onSet');
     };
     $scope.onStop = function () {
-        console.log('onStop');
+        // console.log('onStop');
     };
 
     $scope.serviceLog = {

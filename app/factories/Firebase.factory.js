@@ -80,6 +80,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
             firebaseURL + `service.json`,
             JSON.stringify({
                 vin:selectedAutoVin,
+                type:newService.type,
                 date:newService.date,
                 mileage:newService.mileage,
                 cost:newService.cost,

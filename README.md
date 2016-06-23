@@ -57,6 +57,10 @@ This will show at in your browser of choice:
 
 ## Vehicle service ![Screenshot](/img/service.png)
 
+## Vehicle service log ![Screenshot](/img/serviceLog.png)
+
+## Vehicle recalls ![Screenshot](/img/serviceRecall.png)
+
 ## Logout ![Screenshot](/img/logout.png)
 
 ### Contributors:

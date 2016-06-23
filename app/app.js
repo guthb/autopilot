@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("AutoPilot", ["ngRoute"])
+var app = angular.module("AutoPilot", ["ngRoute", "ui.materialize"])
 .constant ('firebaseURL', 'https://ng-bg-pm.firebaseio.com/')
 .constant ('recallURL', 'http://www.nhtsa.gov/webapi/api/Recalls/vehicle/');
 
