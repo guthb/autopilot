@@ -2,7 +2,7 @@
 
 var app = angular.module("AutoPilot", ["ngRoute"])
 .constant ('firebaseURL', 'https://ng-bg-pm.firebaseio.com/')
-.constant ('recallURL', 'http://www.nhtsa.gov/webapi/api/Recalls/vehicle/')
+.constant ('recallURL', 'http://www.nhtsa.gov/webapi/api/Recalls/vehicle/');
 
 app.config(function($routeProvider) {
   $routeProvider.
@@ -42,7 +42,7 @@ app.config(function($routeProvider) {
     }).
     when("/recall/:autoVin", {
       templateUrl: "partials/servicerecall.html",
-      controller: "",
+      controller: "ServiceRecallCtrl",
       // resolve: {isAuth}
     }).
 

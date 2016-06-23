@@ -1,22 +1,21 @@
 "use strict";
 
-app.factory("RecallFactory", function($q, $http){
+app.factory("RecallFactory", function($q, $http, $rootScope, recallURL){
 
   return {
     //Function to grab data from (json) NHTSA API
-    getRecallsFromApi : function(auto){
+    getRecallsFromApi : function(autoyear, automake, automodel){
 
       let recalls = [];
 
       return $q(function(resolve, reject){
-        $http.get(`${recallURL}modelyear/${auto.year}/make/${auto.make}/model/${auto.model}?format=json`)
-          .success(function(moviesJson){
-            let recallObject = [];
-            recallObject = recallJson.Search;
-            Object.keys(recallObject).forEach(function(key){
-              recalls.push(recallObject[key]);
-            });
-            resolve(getRecallsFromApi);
+        $http.get(`${recallURL}modelyear/${autoyear}/make/${automake}/model/${automodel}?format=json`)
+          .success(function(recallJson){
+            console.log("recallJson", recallJson );
+            let recallObject = recallJson.Results;
+            console.log("recall in factory", recallObject);
+            resolve(recallObject);
+
           })
           .error(function(error){
             reject(error);
@@ -28,3 +27,5 @@ app.factory("RecallFactory", function($q, $http){
 
   };
 });
+
+

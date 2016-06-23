@@ -2,13 +2,12 @@
 
 app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFactory){
 
-  $scope.$watch( $rootScope.landing)
+  $scope.$watch( $rootScope.landing);
   $scope.title ="Auto Service";
 
   $rootScope.landing = false;
 
   $scope.serviceAuto = {};
-
 
 
   var currentTime = new Date();
@@ -58,13 +57,13 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
   FirebaseFactory.getSingleAutofromFireBase($rootScope.selectedAuto.id, $scope.selectedAuto)
      .then(function successCallback(response){
       $scope.serviceAuto = response;
-     })
+     });
 
 //calls the factory to add new service to firebase
   $scope.saveServiceLog = function (){
     FirebaseFactory.postServiceIntoFirebase($scope.serviceLog, $rootScope.selectedAuto.vin)
       .then(function successCallback(response) {
-        console.log(response)
+        console.log(response);
         $location.url(`/garage/1`);
       });
   };
@@ -75,13 +74,16 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
   };
 
 
+ $scope.backToGarage = function (auto) {
+    $rootScope.selectedAuto = auto;
+      $location.path(`/garage/1`);
+  };
 
 
-
-
-
-
-
+  $scope.viewAutoRecalls= function (auto) {
+    $rootScope.selectedAuto = auto;
+      $location.path(`/recall/{$scope.serviceAuto.vin`);
+  };
 
 
 

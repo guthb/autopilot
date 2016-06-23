@@ -7,7 +7,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
     getAutosFromFirebase : function() {
       let autos = [];
       // let user = AuthFactory.getUser();
-      let useruid = 1
+      let useruid = 1;
       return $q( (resolve, reject) => {
         $http.get(`${firebaseURL}auto.json?orderBy="uid"&equalTo="${useruid}"`)
           .success( (returnObject) => {
@@ -23,7 +23,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
         .error(function(error){
           reject(error);
         });
-      })
+      });
     },
 
     getServiceFromSelectedAutoFromFirebase : function() {
@@ -45,7 +45,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
         .error(function(error){
           reject(error);
         });
-      })
+      });
     },
 
 
@@ -159,7 +159,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
         }); //-->end of return
     } //---> end of putSingle
 
-  } // end of return for all functions
+  }; // end of return for all functions
 
 }); //end of factory
 

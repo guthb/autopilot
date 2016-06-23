@@ -2,7 +2,6 @@
 
 app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseFactory) {
 
-  $scope.welcome = "hello";
   $scope.$watch( $rootScope.landing);
   $rootScope.editMode =  false;
 
@@ -29,7 +28,7 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
     let newAuto = $scope.newAuto;
     FirebaseFactory.postAutoIntoFirebase(newAuto)
         .then(function successCallback(response) {
-          console.log(response)
+          console.log(response);
           // $location.url("/garage/1");
         });
         //resets the values for next entry
