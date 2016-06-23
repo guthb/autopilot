@@ -17,13 +17,13 @@ app.controller("AutoEditCtrl", function($scope, $location, $rootScope, $routePar
   FirebaseFactory.getSingleAutofromFireBase($rootScope.selectedAuto.id)
      .then(function successCallback(response){
       $scope.newAuto = response;
-     })
+     });
 
   //calls the factory to add new vehicle to firebase
   $scope.addNewAuto = function (){
     FirebaseFactory.putSingleAuto($rootScope.selectedAuto.id, $scope.newAuto)
       .then(function successCallback(response) {
-        console.log(response)
+        console.log(response);
         $location.url("/garage/1");
       });
   };

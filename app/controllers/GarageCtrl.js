@@ -20,21 +20,21 @@ $rootScope.editMode = false;
       FirebaseFactory.getAutosFromFirebase()
       .then(function(autoCollection) {
         $scope.autos = autoCollection;
-      })
-    })
+      });
+    });
   };
 
   $scope.editAutoArrayItem = function (auto) {
     $rootScope.selectedAuto = auto;
       console.log("auto in edit array", auto);
         $location.url(`/edit/${auto.vin}`);
-  }
+  };
 
   $scope.goToService = function (auto) {
     console.log("auto in service call", auto.vin);
     $rootScope.selectedAuto = auto;
       $location.path(`/service/${auto.vin}`);
-  }
+  };
 
 
 });

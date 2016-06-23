@@ -1,5 +1,5 @@
 <h1>{{title}}</h1>
-<!-- <div class="container"> -->
+<div class="container">
 <div>
   <p> auto details</p>
   <p class="auto">{{serviceAuto.year}}</p>
@@ -9,18 +9,48 @@
   <p class="auto">{{serviceAuto.color}}</p>
 
 </div>
-
-  <!-- <legend> Service Items</legend> -->
+<!--
+  <legend> Service Items</legend>
   <label>Select Service</label>
     <p><select>
       <option value="1" >fuel</option>
       <option value="2" >oil</option>
-      <!-- <option value="3" >maintenance</option>
-      <option value="4" >tires</option> -->
-    </select></p>
+      <option value="3" >maintenance</option>
+      <option value="4" >tires</option>
+    </select></p> -->
 
 
-  <label for="inputCreated">Input date</label>
+  <!-- <a class='dropdown-button btn' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
+    Pick Your Service
+  </a>
+
+
+ <ul id='demoDropdown' class='dropdown-content'>
+      <li><a href="javascript:void(0);">Fuel</a></li>
+      <li><a href="javascript:void(0);">Oil</a></li>
+      <li><a href="javascript:void(0);">Maintenance</a></li>
+      <li><a href="javascript:void(0);">Tires</a></li>
+  </ul>
+ -->
+ <div class="input-field col s12">
+    <select multiple>
+      <option value="" disabled selected>Choose your Service</option>
+      <option value="1">Fuel</option>
+      <option value="2">Oil</option>
+      <option value="3">Maintenance</option>
+      <option value="4">Tires</option>
+    </select>
+  </div>
+
+
+
+
+
+
+
+
+
+  <label for="inputCreated"></label>
     <input input-date
       type="text"
       name="created"
@@ -45,15 +75,17 @@
       on-open="onOpen()"
       on-close="onClose()"
       on-set="onSet()"
-      on-stop="onStop()"  />
+      on-stop="onStop()" />
 
 
   <input type="text" placeholder="enter mileage" ng-model="serviceLog.mileage"">
   <input type="text" placeholder="enter cost" ng-model="serviceLog.cost">
+
   <button class="buttonSpacing col m12 offset-m1 btn" ng-click="saveServiceLog(serviceAuto)">Save</button>
   <button class="buttonSpacing col m12 offset-m1 btn" ng-click="viewAutoServiceLogs(serviceAuto)">Logs</button>
-  <button class="buttonSpacing col m12 btn" ng-click="viewAutRecalls(serviceAuto)">Recalls</button>
+  <button class="buttonSpacing col m12 offset-m1 btn" ng-click="viewAutoRecalls(serviceAuto)">Recalls</button>
+  <button class="buttonSpacing col m12 btn" ng-click="backToGarage(serviceAuto)">Garage</button>
 
   <p>Auto Service Notes</p>
   <input type="text" placeholder="" ng-model="serviceLog.note">
-<!-- </div> -->
+</div>
