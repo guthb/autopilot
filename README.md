@@ -14,6 +14,10 @@ Application will allow the user to build thier vehicle(s) to track the maintenan
 ### Description
 User will create account and be allowed to log in.  Interface will allow the  user to create a vehicle object and then store in a "garage" to track the following items: oil, tires, fuel and service items.
 
+Application will call a vehcile recall api to get all open recalls on the vehicles entered in the garage
+
+Application will allow vehicle maintence service items to be viewed.
+
 ### Stretch
 Application will call a vehcile recall api to get all open recalls on the vehicles entered and allow storage and acknowlegement of those recalls.
 
