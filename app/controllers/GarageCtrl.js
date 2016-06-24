@@ -21,6 +21,11 @@ $rootScope.editMode = false;
       .then(function(autoCollection) {
         $scope.autos = autoCollection;
       });
+      FirebaseFactory.deleteServiceFromFireBase(auto.vin)
+    .then(function () {
+      console.log("deleted a service ?");
+      });
+
     });
   };
 

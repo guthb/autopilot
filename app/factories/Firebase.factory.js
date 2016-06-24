@@ -19,7 +19,6 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
             });
             resolve(autos);
         })
-
         .error(function(error){
           reject(error);
         });
@@ -125,6 +124,35 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
           });
         }); //-->end of return
     },
+
+    deleteServiceFromFireBase : function(vin) {
+      let servicesVin = [];
+      let key = {};
+      console.log("vin", vin );
+      return $q((resolve,reject) => {
+          $http
+            .get(firebaseURL +`service.json?orderBy="vin"&equalTo="${vin}"`)
+            .success((returnObject) => {
+              console.log("returnOject for service",returnObject );
+              var serviceVinCollection = returnObject;
+              Object.keys(serviceVinCollection).forEach((key) => {
+                serviceVinCollection[key].id = key;
+                servicesVin.push(serviceVinCollection[key]);
+              });
+            console.log("servicesVin", servicesVin);
+            for (var i = 0; i < servicesVin.length; i++){
+               console.log("key", servicesVin[i] );
+               $http
+                .delete(firebaseURL +`service/${servicesVin[i].id}.json`)
+                .success ((response) => {
+                  resolve (response);
+                });
+              }
+          });
+        }); //-->end of return
+    },
+
+
 
     getSingleAutofromFireBase : function(sentID){
         console.log("sentID for Edit", sentID);

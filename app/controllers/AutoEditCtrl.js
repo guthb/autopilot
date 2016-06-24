@@ -10,7 +10,9 @@ app.controller("AutoEditCtrl", function($scope, $location, $rootScope, $routePar
 
   $scope.title ="Edit Auto";
   $scope.submitButtonText = "Re-Build Auto";
+  $scope.garageButtonText = "Cancel";
   $scope.newAuto = {};
+
 
   $scope.$watch($rootScope.editMode);
 
@@ -24,8 +26,12 @@ app.controller("AutoEditCtrl", function($scope, $location, $rootScope, $routePar
     FirebaseFactory.putSingleAuto($rootScope.selectedAuto.id, $scope.newAuto)
       .then(function successCallback(response) {
         console.log(response);
-        $location.url("/garage/1");
+        $location.path("/garage/1");
       });
+  };
+
+  $scope.goToGarage = function (){
+      $location.path("/garage/1");
   };
 
 });
