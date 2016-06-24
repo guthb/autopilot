@@ -1,13 +1,13 @@
 "use strict";
 
-app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
+app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, AuthFactory){
 
   return {
 
     getAutosFromFirebase : function() {
       let autos = [];
-      // let user = AuthFactory.getUser();
-      let useruid = 1;
+      let user = AuthFactory.getUser();
+      let useruid = user.uid;
       return $q( (resolve, reject) => {
         $http.get(`${firebaseURL}auto.json?orderBy="uid"&equalTo="${useruid}"`)
           .success( (returnObject) => {
@@ -28,7 +28,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
     getServiceFromSelectedAutoFromFirebase : function() {
       let services = [];
       let auto=$rootScope.selectedAuto;
-      // let user = AuthFactory.getUser();
+      let user = AuthFactory.getUser();
 
       return $q( (resolve, reject) => {
         $http.get(`${firebaseURL}service.json?orderBy="vin"&equalTo="${auto.vin}"`)
@@ -49,7 +49,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
 
 
     putAutoIntoFirebase : function (autoId, newAuto) {
-      //let user = AuthFactory.getUser();
+      let user = AuthFactory.getUser();
       return $q((resolve,reject) => {
 
           $http.put(
@@ -61,8 +61,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
                 vin: auto.vin,
                 color: auto.color,
                 img: auto.img,
-                // uid: user.uid,
-                uid:"1"
+                uid: user.uid,
+                //uid:"1"
             })
           )
           .success(function(response){
@@ -72,7 +72,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
     },
 
     postServiceIntoFirebase : function (newService, selectedAutoVin) {
-      //let user = AuthFactory.getUser();
+      let user = AuthFactory.getUser();
       return $q((resolve,reject) => {
 
           $http.post(
@@ -93,7 +93,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
     },
 
     postAutoIntoFirebase : function (newAuto) {
-      //let user = AuthFactory.getUser();
+      let user = AuthFactory.getUser();
       console.log("newAuto for Post", newAuto );
       return $q((resolve,reject) => {
           $http.post(
@@ -105,8 +105,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
                   vin:newAuto.vin,
                   color: newAuto.color,
                   img: "",
-                  // uid:  user.uid,
-                  uid:"1"
+                  uid:  user.uid,
+                  //uid:"1"
               }))
           .success(function(response){
               resolve(response);
@@ -168,7 +168,7 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
     },
 
     putSingleAuto : function(sentID, newAuto){
-      // let user = AuthFactory.getUser();
+      let user = AuthFactory.getUser();
       return $q((resolve, reject) => {
           $http.put(
               firebaseURL + `auto/${sentID}.json`,
@@ -179,8 +179,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL){
                   vin: newAuto.vin,
                   color: newAuto.color,
                   img: newAuto.img,
-                  // uid: user.uid,
-                  uid:"1"
+                  uid: user.uid,
+                  //uid:"1"
               }))
             .success((objectFromFirebase) => {
               resolve(objectFromFirebase); //promise word
