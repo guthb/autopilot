@@ -17,6 +17,7 @@ $rootScope.editMode = false;
     $rootScope.selectedAuto = auto;
       FirebaseFactory.deleteAutoFromFireBase(auto.id)
     .then(function () {
+      Materialize.toast(`You Deleted A ${auto.model}`, 5000,  "orange lighten-3");
       FirebaseFactory.getAutosFromFirebase()
       .then(function(autoCollection) {
         $scope.autos = autoCollection;

@@ -29,7 +29,7 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
     FirebaseFactory.postAutoIntoFirebase(newAuto)
         .then(function successCallback(response) {
           console.log(response);
-          // $location.url("/garage/1");
+          Materialize.toast("Auto Added!", 4000,  "orange lighten-3");
         });
         //resets the values for next entry
       $scope.newAuto = {

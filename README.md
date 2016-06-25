@@ -55,6 +55,8 @@ This will show at in your browser of choice:
 
 ## Login ![Screenshot](/img/login.png)
 
+## Landing ![Screenshot](/img/landing.png)
+
 ## Vehicle Build ![Screenshot](/img/auto.png)
 
 ## Vehicle in Garage ![Screenshot](/img/garage.png)

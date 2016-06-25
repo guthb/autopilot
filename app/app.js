@@ -12,7 +12,7 @@ let isAuth = (AuthFactory) => new  Promise ((resolve, reject) =>  {
     console.log("User is not authenticated, reject route promise");
     reject();
   }
-})
+});
 
 app.config(function($routeProvider) {
   $routeProvider.
@@ -80,5 +80,5 @@ app.run(($location) => {
       console.log("after auth check");
       $location.path('/login');
     }
-  }) //firebase method
+  }); //firebase method
 });
