@@ -28,8 +28,10 @@ app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL,
         password: $scope.account.password
     }, (error, userData) => {
           if(error){
+            Materialize.toast(`${error.message}`, 5000,  "red lighten-3");
             console.log(`Error creating user: ${error}`);
           } else{
+            Materialize.toast(`New User Created`, 3000,  "orange lighten-3");
             console.log(`Created user account with uid: ${userData.uid}`);
             $scope.login();
           }
@@ -46,6 +48,9 @@ app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL,
       $location.path("/");
       $scope.$apply();
       $rootScope.isActive =true;
+    })
+    .catch( (error) => {
+      Materialize.toast(`${error.message}`, 5000,  "red lighten-3");
     });
  };
 

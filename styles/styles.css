@@ -1,0 +1,24 @@
+#loaderContainer {
+  position: fixed;
+  top: 48%;
+  left: 48%;
+  z-index: 1100; }
+
+.mainbodyform {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  width: 90%;
+  height: 900px;
+  padding: 10px;
+  margin-top: 15px;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+.buttonSpacing {
+  margin-top: 5px; }
+
+body {
+  background: slategray; }
+
+h1 {
+  text-align: center; }

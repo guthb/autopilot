@@ -1,23 +1,23 @@
 <h1>{{title}}</h1>
-<div>
-<div>
-  <p> auto details</p>
-  <p class="auto">{{serviceAuto.year}}</p>
-  <p class="auto">{{serviceAuto.make}}</p>
-  <p class="auto">{{serviceAuto.model}}</p>
-  <p class="auto">{{serviceAuto.vin}}</p>
-  <p class="auto">{{serviceAuto.color}}</p>
-</div>
-
-<div><a ng-href="#/garage/1" class="col m2 offset-m2 btn-large" ng-model="garage">Garage</a></div>
-
-<div>
-  <div class="serviceCard" ng-repeat="service in serviceLog">
-    <p> <label>Service Type</label> {{service.type}} </p>
-    <p> <label>Service Date</label> {{service.date}} </p>
-    <p> <label>Service Mileage</label> {{service.mileage}} </p>
-    <p> <label>Service Cost</label> {{service.cost}} </p>
-    <p> <label>Service Notes</label> {{service.note}} </p>
+<div class="container col m6">
+  <div>
+    <h3>Auto Details</h3>
+    <p class="auto">{{serviceAuto.year}}</p>
+    <p class="auto">{{serviceAuto.make}}</p>
+    <p class="auto">{{serviceAuto.model}}</p>
+    <p class="auto">{{serviceAuto.vin}}</p>
+    <p class="auto">{{serviceAuto.color}}</p>
   </div>
-</div>
+
+  <div><a ng-href="#/garage/1" class="col m2 offset-m2 btn-large orange darken-3" ng-model="garage">Garage</a></div>
+
+  <div>
+    <div class="serviceCard" ng-repeat="service in serviceLog">
+      <p> <label>Service Type</label> {{service.type}} </p>
+      <p> <label>Service Date</label> {{service.date}} </p>
+      <p> <label>Service Mileage</label> {{service.mileage}} </p>
+      <p> <label>Service Cost</label> {{service.cost}} </p>
+      <p> <label>Service Notes</label> {{service.note}} </p>
+    </div>
+  </div>
 </div>
