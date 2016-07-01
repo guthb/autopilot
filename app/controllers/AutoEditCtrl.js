@@ -3,10 +3,8 @@
 app.controller("AutoEditCtrl", function($scope, $location, $rootScope, $routeParams, FirebaseFactory) {
 
   $scope.$watch($rootScope.landing);
-  // $rootScope.selectedAuto = {};
   $rootScope.editMode =  true;
   $rootScope.landing = false;
-  console.log("rootscope", $rootScope.landing);
 
   $scope.title ="Edit Auto";
   $scope.submitButtonText = "Re-Build Auto";
@@ -15,7 +13,7 @@ app.controller("AutoEditCtrl", function($scope, $location, $rootScope, $routePar
 
 
   $scope.$watch($rootScope.editMode);
-
+  //calls the factory to pull auto info from firebase
   FirebaseFactory.getSingleAutofromFireBase($rootScope.selectedAuto.id)
      .then(function successCallback(response){
       $scope.newAuto = response;
@@ -25,13 +23,12 @@ app.controller("AutoEditCtrl", function($scope, $location, $rootScope, $routePar
   $scope.addNewAuto = function (){
     FirebaseFactory.putSingleAuto($rootScope.selectedAuto.id, $scope.newAuto)
       .then(function successCallback(response) {
-        console.log(response);
-        $location.path("/garage/1");
+        $location.path("/garage/:uid");
       });
   };
 
   $scope.goToGarage = function (){
-      $location.path("/garage/1");
+      $location.path("/garage/:uid");
   };
 
 });

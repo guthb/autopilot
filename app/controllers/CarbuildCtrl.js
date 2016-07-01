@@ -6,7 +6,6 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
   $rootScope.editMode =  false;
 
   $rootScope.landing = false;
-  console.log("rootscope", $rootScope.landing);
 
   $scope.title ="New Auto";
   $scope.submitButtonText = "Build Auto";
@@ -28,8 +27,7 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
     let newAuto = $scope.newAuto;
     FirebaseFactory.postAutoIntoFirebase(newAuto)
         .then(function successCallback(response) {
-          console.log(response);
-          Materialize.toast("Auto Added!", 4000,  "orange lighten-3");
+          Materialize.toast("Auto Added!", 3000,  "orange lighten-3");
         });
         //resets the values for next entry
       $scope.newAuto = {
@@ -57,7 +55,7 @@ app.controller("CarbuildCtrl", function($scope, $location, $rootScope, FirebaseF
 
   // Takes you to garage
   $scope.goToGarage = function (){
-    $location.url("/garage/1");
+    $location.url("/garage/:uid");
   };
 
 }); //--->end of controller

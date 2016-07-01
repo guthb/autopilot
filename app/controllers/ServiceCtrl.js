@@ -11,9 +11,9 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
 
 
   $scope.type = {
-            value: "",
-            choices: ["fuel", "oil", "maintenace", "tires"]
-        };
+    value: "",
+    choices: ["fuel", "oil", "maintenace", "tires"]
+  };
 
 
 
@@ -58,20 +58,17 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
         note:""
       };
 
-
-
-    console.log("rootScope",  $rootScope.selectedAuto);
   FirebaseFactory.getSingleAutofromFireBase($rootScope.selectedAuto.id, $scope.selectedAuto)
      .then(function successCallback(response){
       $scope.serviceAuto = response;
      });
 
-//calls the factory to add new service to firebase
+  //calls the factory to add new service to firebase
   $scope.saveServiceLog = function (){
     FirebaseFactory.postServiceIntoFirebase($scope.serviceLog, $rootScope.selectedAuto.vin)
       .then(function successCallback(response) {
         console.log(response);
-        $location.url(`/garage/1`);
+        $location.url(`/garage/:uid`);
       });
   };
 

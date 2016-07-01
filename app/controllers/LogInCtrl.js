@@ -2,14 +2,7 @@
 
 app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL, AuthFactory){
 
-  // $scope.welcome = "hello world";
-
   let ref = new Firebase(firebaseURL);
-  // console.log("ref",  ref);
-
-
-  // $scope.hasUser =false;
-
 
   $scope.account = {
     email: "",
@@ -22,36 +15,31 @@ app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL,
   }
 
   $scope.register = () => {
-    console.log("you clicked register");
     ref.createUser({
         email: $scope.account.email,
         password: $scope.account.password
     }, (error, userData) => {
           if(error){
-            Materialize.toast(`${error.message}`, 5000,  "red lighten-3");
-            console.log(`Error creating user: ${error}`);
+            Materialize.toast(`${error.message}`, 3000,  "red lighten-3");
           } else{
             Materialize.toast(`New User Created`, 3000,  "orange lighten-3");
-            console.log(`Created user account with uid: ${userData.uid}`);
             $scope.login();
           }
         });
-    };
+  };
 
- $scope.login = () => {
-  console.log("you cliked login");
-  AuthFactory
-    .authenticate($scope.account)
+  $scope.login = () => {
 
-    .then( () => {
-      // $scope.hasUser =true;
-      $location.path("/");
-      $scope.$apply();
-      $rootScope.isActive =true;
-    })
-    .catch( (error) => {
-      Materialize.toast(`${error.message}`, 5000,  "red lighten-3");
-    });
- };
+    AuthFactory
+      .authenticate($scope.account)
+      .then( () => {
+        $location.path("/");
+        $scope.$apply();
+        $rootScope.isActive =true;
+      })
+      .catch( (error) => {
+        Materialize.toast(`${error.message}`, 5000,  "red lighten-3");
+      });
+  };
 
 });
