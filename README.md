@@ -21,9 +21,6 @@ Application will allow vehicle maintence service items to be viewed.
 ### Stretch
 Application will call a vehcile recall api to get all open recalls on the vehicles entered and allow storage and acknowlegement of those recalls.
 
-### Beyond MVP
-Application will call a vehicle maintence service schedule api to allow the  display and review of those items
-
 ### Setup
 You will need a simple web server to host this, Node.js worked well for us:
 
