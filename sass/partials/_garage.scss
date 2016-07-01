@@ -1,10 +1,11 @@
 .buttonSpacing {
   margin-top:  5px;
+  margin-bottom: 5px;
 }
 
-// .autobutton {
-//   display: inline-block;
-//   overflow: hidden;
-//   position: relative;
-//   text-align:center;
-// }
+.card {
+  border: 2px solid #ef6c00;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
