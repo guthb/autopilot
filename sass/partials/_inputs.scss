@@ -1,0 +1,114 @@
+/* label color */
+.input-field label {
+ color: #000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #6a1b9a;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #6a1b9a;
+}
+
+/* email focus color */
+.input-field input[type=email]:focus + label {
+ color: #000;
+}
+/* email underline focus color */
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* email valid color */
+.input-field input[type=email].valid {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* email invalid color */
+.input-field input[type=email].invalid {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+
+
+/* password focus color */
+.input-field input[type=password]:focus + label {
+ color: #000;
+}
+/* password underline focus color */
+.input-field input[type=Password]:focus {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* password valid color */
+.input-field input[type=password].valid {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* password invalid color */
+.input-field input[type=password].invalid {
+ border-bottom: 1px solid #6a1b9a;
+ box-shadow: 0 1px 0 0 #000;
+}
+
+.dropdown-content{
+ li span{
+  color: #6a1b9a;}
+}
+
+/* calander */
+.picker__weekday-display {
+  background-color: #4a148c;
+}
+
+.picker__month-display {
+  background-color: #6a1b9a;
+}
+.picker__day-display {
+  background-color: #6a1b9a;
+
+}
+.picker__year-display {
+  background-color: #6a1b9a;
+}
+
+.picker__date-display {
+  background-color: #6a1b9a;
+}
+
+.picker__close, .picker__today {
+  color: #ba68c8;
+}
+
+.picker__day--highlighted, .picker__day--selected, .picker__day--selected:hover, .picker--focused {
+  background-color: #ba68c8;
+}
+
+.picker__day.picker__day--today {
+  color: #ba68c8;
+}
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+   background-color: #ba68c8;
+}
+
+.picker__nav--prev:hover, .picker__nav--next:hover {
+  background: #ce93d8;
+}
+

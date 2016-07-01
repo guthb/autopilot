@@ -45,15 +45,21 @@
       on-set="onSet()"
       on-stop="onStop()" />
 
-
-  <input type="text" placeholder="enter mileage" ng-model="serviceLog.mileage"">
-  <input type="text" placeholder="enter cost" ng-model="serviceLog.cost">
-
+  <p>Enter Mileage</p>
+  <div class="input-field">
+    <input type="text" placeholder="enter mileage" ng-model="serviceLog.mileage"">
+  </div>
+  <p>Enter Cost</p>
+  <div class="input-field">
+    <input type="text" placeholder="enter cost" ng-model="serviceLog.cost">
+  </div>
   <button class="buttonSpacing col m12 offset-m1 btn orange darken-3" ng-click="saveServiceLog(serviceAuto)">Save</button>
   <button class="buttonSpacing col m12 offset-m1 btn orange darken-3" ng-click="viewAutoServiceLogs(serviceAuto)">Logs</button>
   <button class="buttonSpacing col m12 offset-m1 btn orange darken-3" ng-click="viewAutoRecalls(serviceAuto)">Recalls</button>
   <button class="buttonSpacing col m12 btn orange darken-3" ng-click="backToGarage(serviceAuto)">Garage</button>
 
   <p>Auto Service Notes</p>
-  <input type="text" placeholder="" ng-model="serviceLog.note">
+  <div class="input-field">
+    <input type="text" placeholder="" ng-model="serviceLog.note">
+  </div>
 </div>

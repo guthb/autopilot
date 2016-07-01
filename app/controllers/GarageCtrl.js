@@ -11,7 +11,9 @@ $rootScope.editMode = false;
   FirebaseFactory.getAutosFromFirebase().then(function(autoCollection){
     console.log("autoCollection from get promise", autoCollection);
     $scope.autos = autoCollection;
+    console.log("test for chris inside ", $scope.autos );
   });
+  console.log("test for chris outside", $scope.autos );
 
   $scope.deleteAutoArrayItem = function (auto) {
     $rootScope.selectedAuto = auto;

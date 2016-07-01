@@ -1,20 +1,25 @@
 <h1>{{title}}</h1>
 <form>
   <p>Year</p>
-  <input ng-required="true" required class="validate" type="text" placeholder="Year of auto" ng-model="newAuto.year">
-
+  <div class="input-field">
+    <input ng-required="true" required class="validate" type="text" placeholder="Year of auto" ng-model="newAuto.year">
+  </div>
   <p>Make</p>
-  <input ng-required="required" required class="validate" type="text" placeholder="Maker of auto" ng-model="newAuto.make">
-
+  <div class="input-field">
+    <input ng-required="required" required class="validate" type="text" placeholder="Maker of auto" ng-model="newAuto.make">
+  </div>
   <p>Model</p>
+    <div class="input-field">
   <input ng-required="required" required class="validate" type="text" placeholder="Model of auto" ng-model="newAuto.model">
-
+  </div>
   <p>VIN</p>
-  <input ng-required="required" required class="validate" type="text" placeholder="VIN of auto" ng-model="newAuto.vin">
-
+  <div class="input-field">
+   <input ng-required="required" required class="validate" type="text" placeholder="VIN of auto" ng-model="newAuto.vin">
+  </div>
   <p>Color</p>
-  <input type="text" placeholder="Color of auto" ng-model="newAuto.color">
-
+  <div class="input-field">
+    <input type="text" placeholder="Color of auto" ng-model="newAuto.color">
+  </div>
   <div class="row">
     <div class="col m3 offset-m1"><a class="btn-large orange darken-3" ng-click="addNewAuto()">{{submitButtonText}}</a></div>
     <div class="col m3 offset-m1"><a class="btn-large orange darken-3" ng-click="clearAutoData()" ng-hide="editMode">{{clearButtonText}}</a></div>

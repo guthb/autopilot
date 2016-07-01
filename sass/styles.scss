@@ -1,10 +1,13 @@
 @import "partials/loader";
 @import "partials/body";
 @import "partials/garage";
-@import "partials/servicelog";
+@import "partials/inputs";
+@import "partials/landing";
 
 body {
-  background: slategray; }
+  background-image: url(../img/speedometer-vector_fk33eePO_L.jpg);
+  background-size: cover;
+}
 
 h1 {
   text-align: center; }
