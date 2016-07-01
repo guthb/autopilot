@@ -1,8 +1,7 @@
 # Front End Capstone Application  Autopilot
 
 ### Summary
-Application will allow the user to build thier vehicle(s) to track the maintenance items on as many vehicles they use.  ntered on the vehicles service scheudules
-
+Application will allow the user to build their vehicle(s) to track the maintenance items on as many vehicles they use.  
 
 ## Requirements
 1. Must use AngularJS 1
