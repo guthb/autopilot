@@ -28,8 +28,8 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
     $scope.clear = 'Clear';
     $scope.close = 'Close';
     var days = 15;
-    $scope.minDate = (new Date($scope.currentTime.getTime() - ( 1000 * 60 * 60 *24 * days ))).toISOString();
-    $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
+    // $scope.minDate = (new Date($scope.currentTime.getTime() - ( 1000 * 60 * 60 *24 * days ))).toISOString();
+    // $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
     $scope.onStart = function () {
         // console.log('onStart');
     };
