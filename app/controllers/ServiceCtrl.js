@@ -67,7 +67,7 @@ app.controller("ServiceCtrl", function($scope, $location, $rootScope, FirebaseFa
   $scope.saveServiceLog = function (){
     FirebaseFactory.postServiceIntoFirebase($scope.serviceLog, $rootScope.selectedAuto.vin)
       .then(function successCallback(response) {
-        console.log(response);
+
         $location.url(`/garage/:uid`);
       });
   };
