@@ -6,10 +6,8 @@ var app = angular.module("AutoPilot", ["ngRoute", "ui.materialize"])
 
 let isAuth = (AuthFactory) => new  Promise ((resolve, reject) =>  {
   if (AuthFactory.isAuthenticated()){
-    console.log("User is authenticated resolve route promise");
     resolve();
   } else {
-    console.log("User is not authenticated, reject route promise");
     reject();
   }
 });
@@ -75,9 +73,7 @@ app.run(($location) => {
   let addressRef = new Firebase('https://ng-bg-pm.firebaseio.com/');
   addressRef.unauth();
   addressRef.onAuth( authData => {
-    console.log("RUN");
     if(!authData) {
-      console.log("after auth check");
       $location.path('/login');
     }
   }); //firebase method
