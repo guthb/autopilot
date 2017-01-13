@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, AuthFactory){
+app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, AuthFactory,FIREBASE_CONFIG){
 
   return {
 
@@ -9,7 +9,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, Auth
       let user = AuthFactory.getUser();
       let useruid = user.uid;
       return $q( (resolve, reject) => {
-        $http.get(`${firebaseURL}auto.json?orderBy="uid"&equalTo="${useruid}"`)
+        //$http.get(`${firebaseURL}auto.json?orderBy="uid"&equalTo="${useruid}"`)
+        $http.get(`${FIREBASE_CONFIG.databaseURL}/auto.json?orderBy="uid"&equalTo="${useruid}"`)
           .success( (returnObject) => {
             var autoCollection = returnObject;
 
@@ -31,7 +32,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, Auth
       let user = AuthFactory.getUser();
 
       return $q( (resolve, reject) => {
-        $http.get(`${firebaseURL}service.json?orderBy="vin"&equalTo="${auto.vin}"`)
+        //$http.get(`${firebaseURL}service.json?orderBy="vin"&equalTo="${auto.vin}"`)
+        $http.get(`${FIREBASE_CONFIG.databaseURL}/service.json?orderBy="vin"&equalTo="${auto.vin}"`)
           .success( (returnObject) => {
 
             var serviceCollection = returnObject;
@@ -131,7 +133,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, Auth
 
       return $q((resolve,reject) => {
           $http
-            .get(firebaseURL +`service.json?orderBy="vin"&equalTo="${vin}"`)
+            //.get(firebaseURL +`service.json?orderBy="vin"&equalTo="${vin}"`)
+            .get(FIREBASE_CONFIG.databaseURL +`/service.json?orderBy="vin"&equalTo="${vin}"`)
             .success((returnObject) => {
 
               var serviceVinCollection = returnObject;
@@ -143,7 +146,8 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, Auth
             for (var i = 0; i < servicesVin.length; i++){
 
                $http
-                .delete(firebaseURL +`service/${servicesVin[i].id}.json`)
+                //.delete(firebaseURL +`service/${servicesVin[i].id}.json`)
+                .delete(FIREBASE_CONFIG.databaseURL +`/service/${servicesVin[i].id}.json`)
                 .success ((response) => {
                   resolve (response);
                 });
@@ -191,7 +195,3 @@ app.factory("FirebaseFactory", function($q, $http, $rootScope, firebaseURL, Auth
   }; // end of return for all functions
 
 }); //end of factory
-
-
-
-

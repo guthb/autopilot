@@ -1,8 +1,8 @@
 'use strict';
 
-app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL, AuthFactory){
-
-  let ref = new Firebase(firebaseURL);
+app.controller("LoginCtrl", function($scope, $rootScope, $location, AuthFactory){
+//app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL, AuthFactory){
+  //let ref = new Firebase(firebaseURL);
 
   $scope.account = {
     email: "",
@@ -10,23 +10,23 @@ app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL,
   };
 
   if ($location.path() === '/logout'){
-    ref.unauth();  //firebase method that kills token
+    //ref.unauth();  //firebase method that kills token
+
     $rootScope.isActive = false;
   }
 
   $scope.register = () => {
-    ref.createUser({
+    AuthFactory.registerWithEmail({
         email: $scope.account.email,
         password: $scope.account.password
-    }, (error, userData) => {
-          if(error){
+    }) .then(function (data){ Materialize.toast(`New User Created`, 3000,  "orange lighten-3");
+              $scope.login();}).catch(function(error)
+          {
+
             Materialize.toast(`${error.message}`, 3000,  "red lighten-3");
-          } else{
-            Materialize.toast(`New User Created`, 3000,  "orange lighten-3");
-            $scope.login();
-          }
-        });
+          } )
   };
+
 
   $scope.login = () => {
 
@@ -34,7 +34,7 @@ app.controller("LoginCtrl", function($scope, $rootScope, $location, firebaseURL,
       .authenticate($scope.account)
       .then( () => {
         $location.path("/");
-        $scope.$apply();
+        //$scope.$apply();
         $rootScope.isActive =true;
       })
       .catch( (error) => {
