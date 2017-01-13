@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "auto": {
+      ".indexOn": [
+        "uid",
+        "vin"
+      ]
+    },
+    "service": {
+      ".indexOn": "vin"
+    },
+    "users": {
+      ".indexOn": "uid"
+    }
+  }
+}
